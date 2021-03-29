@@ -11,6 +11,8 @@ const projectsRouter  = require('./routes/projects');
 const app = express();
 
 // require Database
+require('dotenv').config();
+require('./config/database');
 
 app.set('view engine', 'ejs');
 
@@ -25,4 +27,4 @@ app.use('/', indexRouter);
 
 app.listen(port, () => {
     console.log(`Server is on and running on port: ${port}.`);
-})
+});
