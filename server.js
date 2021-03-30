@@ -21,9 +21,9 @@ app.use(morgan('dev'));
 app.use(express.static('public'));
 
 app.use('/', indexRouter);
-// app.use('/open-bugs', openBugRouter);
-// app.use('/closed-bugs', closedBugRouter);
-// app.use('/projects', projectsRouter);
+app.use('/open-bugs', openBugRouter);
+app.use('/close-bugs', closedBugRouter);
+app.use('/projects', projectsRouter);
 
 app.listen(port, () => {
     console.log(`Server is on and running on port: ${port}.`);

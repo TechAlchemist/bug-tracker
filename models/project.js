@@ -3,9 +3,7 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
    projectName: String,
-   totalBugs: Number,
-   openBugs: Number,
-   closedBugs: Number 
+   projectShortDescription: String
 }, {
     timestamps: true
 });
