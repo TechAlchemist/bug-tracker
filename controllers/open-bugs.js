@@ -22,9 +22,28 @@ function newBug(req, res) {
     }
 }
 
+function bugDetails(req, res) {
+    OpenBug.findById(req.params.id, function(error, bug) {
+        res.render('bugs/show', {
+            bug
+        });
+    });
+}
+
+function editBugDetails(req, res) {
+    OpenBug.findById(req.params.id, function(error, bug) {
+        res.render('bugs/open-bug-edit', {
+            bug
+        });
+    });
+}
+
+
 
 
 module.exports = {
     index,
-    newBug
+    newBug,
+    bugDetails,
+    editBugDetails
 };

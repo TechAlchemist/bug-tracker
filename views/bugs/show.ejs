@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/bootstrap-cdn.ejs') %>
+    
+    <title>Bug Deets</title>
+</head>
+<body>
+    <%- include('../partials/navbar.ejs', {active: "Open Bugs"}) %>
+    <div class="container">
+        <div class="container">
+            <button type="button" class="btn btn-primary"><- Go Back</button>
+        </div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                
+                <h2 class="display-4"> <%= bug.projectName %> </h2>
+                <p class="lead"> <%= bug.description %> </p>
+                
+                <small> BugID: <%= bug.id %> </small>
+               
+                
+            </div>
+        </div>
+        
+        <form>
+            <h1> Close Details </h1>
+            <div class="form-group">
+              <label for="close-bug-descrip">How did fix or remove the bug? </label>
+              <textarea class="form-control" id="close-bug-descrip" placeholder="Enter email"> </textarea>
+              <small id="emailHelp" class="form-text text-muted">Try and be as descriptive as possible. </small>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        
+    </div>
+</body>
+</html>

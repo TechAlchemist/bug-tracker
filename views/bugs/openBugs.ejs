@@ -19,11 +19,26 @@
                 </div>
             </div>
             
-            <div class="list-group">
-                <% bugs.forEach(bug => { %>
-                    <a href="#" class="list-group-item list-group-item-action"> <span class="list-title"> <%= bug.projectName %> </span> <br> <%= bug.description %> </a>     
-                    <% }) %>
-            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                      <th>Project Name</th>
+                      <th>Bug Description</th>
+                      <th>Bug Edit Link</th>
+                      <th>Bug Close Link</th>
+                    </tr>
+                  </thead>
+                  <tbody id="openBugTable">
+                      <% bugs.forEach(bug => { %>
+                        <tr>
+                            <td> <%= bug.projectName %> </td>
+                            <td> <%= bug.description %> </td>
+                            <td> <a href=<%= "/open-bugs/edit/" + bug.id %> > Edit Bug  </a>  </td>
+                            <td> <a href=<%= "/open-bugs/" + bug.id %> > Close Bug  </a>  </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
                 
         </div>
 </body>
