@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/bootstrap-cdn.ejs') %>
+    <link rel="stylesheet" href="css/main.css">
     <title>Open Bugs </title>
 </head>
 <body>
-    <h1> Open Bugs </h1>
-    <%- include('../partials/navbar.ejs') %>
+    <%- include('../partials/navbar.ejs', {active: "Open Bugs"}) %>
+    <div class="container">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Open Bugs</h1>
+                    <p class="lead">"Testing proves a programmer’s failure. Debugging is the programmer’s vindication."</p>
+                    <small> - Boris Beizer </small>
+                </div>
+            </div>
+            
+            <div class="list-group">
+                <% bugs.forEach(bug => { %>
+                    <a href="#" class="list-group-item list-group-item-action"> <span class="list-title"> <%= bug.projectName %> </span> <br> <%= bug.description %> </a>     
+                    <% }) %>
+            </div>
+                
+        </div>
 </body>
 </html>

@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const openBugSchema = new Schema({
    projectID: String,
+   projectName: String,
    description: String
 
 }, {

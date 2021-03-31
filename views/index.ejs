@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bug Tracker</title>
+    <%- include('partials/bootstrap-cdn.ejs') %>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/inspirational-quote.js"></script>
+        <title>Bug Tracker</title>
 </head>
-<body>
-    <h1> Brandon's Bug Tracker </h1>
-    <%- include('./partials/navbar.ejs') %> 
+
+<body onload="apiRequest()">
+    <header>
+        <%- include('./partials/navbar.ejs' ,{active: "Home" }) %>
+    </header>
+
+    <div class="container">
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Brandon's Bug Tracker</h1>
+                <p class="lead"> Full Stack Software Engineer. </p>
+            </div>
+        </div>
+
+        <div class="fixed-bottom">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col">
+                        <p id="quote"> - </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Resources
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 </body>
+
 </html>

@@ -1,6 +1,54 @@
-<ul>
-    <li> <a href="/"> Home </a></li>
-    <li> <a href="/open-bugs"> Open Bugs </a></li>
-    <li> <a href="/close-bugs"> Closed Bugs </a></li>
-    <li> <a href="#"> Projects </a></li>
-</ul>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Bug Tracker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <% if (active == "Home") { %>        
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home (ACTIVE)</a>
+                </li>
+            <% } else {  %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home </a>
+                </li>
+            <% } %>
+
+            <% if (active == "Open Bugs") { %>        
+                <li class="nav-item active">
+                    <a class="nav-link" href="/open-bugs">Open Bugs (ACTIVE)</a>
+                </li>
+            <% } else {  %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/open-bugs">Open Bugs </a>
+                </li>
+            <% } %>
+
+            <% if (active == "Closed Bugs") { %>        
+                <li class="nav-item active">
+                    <a class="nav-link" href="/close-bugs">Closed Bugs (ACTIVE)</a>
+                </li>
+            <% } else {  %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/close-bugs">Closed Bugs </a>
+                </li>
+            <% } %>
+
+            <% if (active == "Projects") { %>        
+                <li class="nav-item active">
+                    <a class="nav-link" href="/projects">Projects (ACTIVE)</a>
+                </li>
+            <% } else {  %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/projects">Projects </a>
+                </li>
+            <% } %>
+
+        </ul>
+        <span class="navbar-text">
+            LOGIN INFO WILL GO HERE
+        </span>
+    </div>
+</nav>
